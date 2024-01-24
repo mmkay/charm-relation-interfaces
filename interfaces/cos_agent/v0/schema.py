@@ -56,8 +56,9 @@ Examples:
 import base64
 import json
 import lzma
-from pydantic import BaseModel, Json
-from typing import Dict, List, Union
+from pydantic_core import CoreSchema, core_schema
+from pydantic import BaseModel, GetCoreSchemaHandler, Json
+from typing import Any, Dict, List, Union
 from interface_tester.schema_base import DataBagSchema
 
 
@@ -80,6 +81,12 @@ class GrafanaDashboard(str):
     def __repr__(self):
         """Return string representation of self."""
         return "<GrafanaDashboard>"
+
+    @classmethod
+    def __get_pydantic_core_schema__(
+        cls, source_type: Any, handler: GetCoreSchemaHandler
+    ) -> CoreSchema:
+        return core_schema.no_info_after_validator_function(cls, handler(str))
 
 
 class NestedDataModel(BaseModel):

@@ -30,7 +30,7 @@ Examples:
 from enum import Enum
 import textwrap
 from typing import List, Optional
-from pydantic import AnyHttpUrl, BaseModel, Field, validator
+from pydantic import AnyHttpUrl, BaseModel, Info, validator
 
 from interface_tester.schema_base import DataBagSchema
 
@@ -71,7 +71,7 @@ class ExternalIdpProvider(BaseModel):
     provider: Provider
     scope: Optional[str]
     provider_id: Optional[str]
-    jsonnet_mapper: Optional[str] = Field(
+    jsonnet_mapper: Optional[str] = Info(
         description=(
             "A jsonnet file that will be used to map the external claims to Kratos' claims. "
             "For more info see https://www.ory.sh/docs/kratos/reference/jsonnet."

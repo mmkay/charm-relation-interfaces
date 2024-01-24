@@ -19,8 +19,8 @@ license.text = "Apache-2.0"
 keywords = ["juju", "relation interfaces"]
 
 dependencies = [
-    "pydantic==1.10.7",
-    "pytest-interface-tester>=1.0.2"
+    "pydantic>2",
+    "pytest-interface-tester@git+https://github.com/mmkay/pytest-interface-tester.git@pydantic-v2-upgrade"
 ]
 
 readme = "README.md"

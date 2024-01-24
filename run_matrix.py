@@ -153,7 +153,7 @@ def _setup_venv(charm_path: Path) -> None:
         logging.info(f"Installing dependencies in venv for {charm_path}")
 
         subprocess.check_call(
-            ".interface-venv/bin/python -m pip install setuptools pytest pytest-interface-tester",
+            ".interface-venv/bin/python -m pip install setuptools pytest pytest-interface-tester@git+https://github.com/mmkay/pytest-interface-tester.git@pydantic-v2-upgrade",
             shell=True,
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
