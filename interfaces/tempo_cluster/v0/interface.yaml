@@ -10,6 +10,6 @@ providers:
       location: tests/interface/conftest.py
       identifier: cluster_tester
 
-requirers:
-  - name: tempo-worker-k8s
-    url: https://github.com/canonical/tempo-worker-k8s-operator
+requirers: []
+#  - name: tempo-worker-k8s
+#    url: https://github.com/canonical/tempo-worker-k8s-operator
