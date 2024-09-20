@@ -6,6 +6,7 @@ status: draft
 providers:
   - name: tempo-coordinator-k8s
     url: https://github.com/canonical/tempo-coordinator-k8s-operator
+    branch: fix/interface-conftest-resource-patch
     test_setup:
       location: tests/interface/conftest.py
       identifier: cluster_tester
